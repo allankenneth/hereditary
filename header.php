@@ -21,9 +21,8 @@
 ?></title>
 <meta name="description" content="<?php bloginfo( 'description' ) ?>">
 <link rel="profile" href="http://gmpg.org/xfn/11" />
-
-<link rel="stylesheet" type="text/css" media="all" href="/wp-content/themes/bsreference/node_modules/bootstrap/dist/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" media="all" href="/wp-content/themes/bsreference/node_modules/bootstrap/node_modules/tether/dist/css/tether.min.css">
+<link rel="stylesheet" type="text/css" media="all" href="/wp-content/themes/hereditary/node_modules/bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" media="all" href="/wp-content/themes/hereditary/node_modules/bootstrap/node_modules/tether/dist/css/tether.min.css">
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>">
 <?php wp_head(); ?>
 </head>

@@ -1,5 +1,5 @@
 <?php
-require_once('wp-bootstrap-navwalker/wp_bootstrap_navwalker.php');
+require_once('wp_bootstrap_navwalker.php');
 require_once('wp_bootstrap_listwalker.php');
 require_once('wp_bootstrap_sidenavwalker.php');
 register_nav_menus( array('primary' => 'Primary Navigation') );
