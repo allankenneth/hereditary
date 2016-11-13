@@ -1,5 +1,7 @@
 # Hereditary Theme for Wordpress
 
+Demo site: http://hereditary.allankenneth.com
+
 The Wordpress pages system supports parent/child relationships, which makes for a great way to easily categorize content into sections. As Wordpress does not support a taxonomy (categories) on the Page type by default, this is essentially the _only_ way to categorize pages without using a plugin. The thing is: the default Wordpress templates provide very limited means of displaying pages with this hierarchy; manual, hard-coded (through the menu system and/or child theme) links are required to expose these relations. And there appears to be no other themes (am I missing something?) offered by third parties where supporting this is a first class consideration.
 
 Using the parent/child feature of pages allows people to easily create reference sites. Even when you enable a taxonomy for the Page type, the added UI complexity for the end-user creates too steep a learning curve, in my experience. For the theme developer, the extra templating required to implement taxonomy archives is a hassle, at best; a nightmare many times.
