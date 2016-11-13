@@ -8,7 +8,7 @@
         if ( is_single() ) {
                 single_post_title(); echo ' | '; bloginfo( 'name' );
         } elseif ( is_home() || is_front_page() ) {
-                bloginfo( 'name' );
+                bloginfo( 'name' ); echo ' | '; bloginfo( 'description' );
         } elseif ( is_page() ) {
                 single_post_title( '' ); echo ' | '; bloginfo( 'name' );
         } elseif ( is_search() ) {
@@ -22,31 +22,36 @@
 <meta name="description" content="<?php bloginfo( 'description' ) ?>">
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="stylesheet" type="text/css" media="all" href="/wp-content/themes/hereditary/node_modules/bootstrap/dist/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" media="all" href="/wp-content/themes/hereditary/node_modules/bootstrap/node_modules/tether/dist/css/tether.min.css">
+<link rel="stylesheet" type="text/css" media="all" href="/wp-content/themes/hereditary/node_modules/tether/dist/css/tether.min.css">
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>">
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-<nav class="navbar navbar-static-top navbar-dark bg-inverse">
-<?php 
-$url = home_url();
-?>
-  <a class="navbar-brand" href="<?php echo esc_url( $url ) ?>"><?php bloginfo( 'name' ) ?></a>
-<!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bsref-collapse" aria-controls="bsref-collapse" aria-expanded="false" aria-label="Toggle navigation"></button>-->
-  <ul class="nav navbar-nav">
-  <?php
-//                'container_class'   => 'collapse navbar-collapse',
-//		'container_id'      => 'bsref-collapse',
-wp_nav_menu( array(
-                'menu'              => 'primary',
-                'theme_location'    => 'primary',
-                'depth'             => 2,
-                'container'         => 'div',
+<nav class="navbar navbar-static-top navbar-light">
+	<?php $url = home_url() ?>
+	<a class="navbar-brand" href="<?php echo esc_url( $url ) ?>"><?php bloginfo( 'name' ) ?></a>
+	<button class="float-md-left hidden-sm-up navbar-toggler" 
+		type="button" 
+		data-toggle="collapse" 
+		data-target="#hereditary-collapse" 
+		aria-controls="bsref-collapse" aria-expanded="false" aria-label="Toggle navigation">
+	</button>
 
-                'menu_class'        => 'nav navbar-nav',
-                'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
-                'walker'            => new wp_bootstrap_navwalker())
-            );
-  ?>
-  </ul>
+	<ul class="float-md-left nav navbar-nav">
+	<?php wp_nav_menu( array(
+		'menu'              => 'primary',
+		'theme_location'    => 'primary',
+		'depth'             => 2,
+		'container'         => 'div',
+		'container_class'   => 'collapse in navbar-collapse',
+		'container_id'      => 'hereditary-collapse',
+		'menu_class'        => 'nav navbar-nav',
+		'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
+		'walker'            => new wp_bootstrap_navwalker())
+	) ?>
+	</ul>
+	<form class="form-inline float-md-right" action="/" method="get">
+		<input class="form-control" name="s" id="s" type="text" placeholder="Search" value="<?php the_search_query(); ?>">
+	</form>
+
 </nav>

@@ -36,6 +36,9 @@ a:hover {
 h1 {
 	margin-bottom: 30px;
 }
+h2 {
+	margin-bottom: 20px;
+}
 .navbar a {
 	color: #FFF;
 }
@@ -65,10 +68,17 @@ h1 {
 	text-align: right;
 }
 
+.btn-section {
+	margin-bottom: 20px;
+}
+
 .list-group .children {
 	display: none;
 }
-
+.custom-background .list-group-item,
+.custom-background .breadcrumb {
+	background: rgba(255,255,255,.6);
+}
 /* TODO figure out why I need to do the following
 .navbar-nav .nav-item+.nav-item is set in bootstrap which makes
 the first item in the nav menu with no left margin...
@@ -96,3 +106,31 @@ body {
 @media (min-width: 75em) {
 
 }
+
+.entry-content img {}
+.alignleft, img.alignleft { float: left; }
+.alignright, img.alignright { float: right; }
+.aligncenter, img.aligncenter {}
+.alignnone, img.alignnone {}
+
+.wp-caption {}
+.wp-caption img {}
+.wp-caption p.wp-caption-text {}
+
+.wp-smiley {}
+
+blockquote.left {}
+blockquote.right {}
+
+.gallery dl {}
+.gallery dt {}
+.gallery dd {}
+.gallery dl a {}
+.gallery dl img {}
+.gallery-caption {}
+
+.size-full {}
+.size-large {}
+.size-medium {}
+.size-thumbnail {}
+
