@@ -24,24 +24,18 @@
 		<li class="breadcrumb-item active"><?php the_title() ?></li>
 		</ol>
 		<?php endif; ?>
+	</div>
+	<div class="col-md-8 offset-md-2">
 		<h1 class="pagetitle"><?php the_title() ?></h1>
 
 	</div>
 
-	<div class="col-md-3">
-  <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#sectionNav">
-    &#9776; Sections
-  </button>
-<div class="collapse navbar-toggleable-xs" id="sectionNav">
+	<div class="col-md-8 offset-md-2">
+	<div class="row">
 
 <?php
-    //GET CHILD PAGES IF THERE ARE ANY
     $children = get_pages('child_of='.$post->ID);
-
-    //GET PARENT PAGE IF THERE IS ONE
     $parent = $post->post_parent;
-
-    //DO WE HAVE SIBLINGS?
     $siblings =  get_pages('child_of='.$parent);
 
     if( count($children) != 0) {
@@ -64,22 +58,27 @@
     }
     //Show pages if this page has more than one sibling
     // and if it has children
-    if(count($siblings) > 1 && !is_null($args))
-    {?>
+    if(count($siblings) > 1 && !is_null($args)): ?>
+	<div class="col-md-4">
+  <button class="hidden-sm-up" type="button" data-toggle="collapse" data-target="#sectionNav">
+    &#9776; Sections
+  </button>
+<div class="collapse navbar-toggleable-xs" id="sectionNav">
+
          <ul class="list-group">
          <?php wp_list_pages($args);  ?>
          </ul>
-    <?php } ?>
 </div>
-<hr>
 	</div>
-	<div class="col-md-9">
+    <?php endif; ?>
+	<div class="col-md-8">
 		<div class="featured-image">
 			<?php the_post_thumbnail() ?>
 		</div>
 		<?php the_content() ?>
 		<div><?php edit_post_link( __( 'Edit' )); ?></div>
 	</div>
+</div>
 </div>
 </div>
 

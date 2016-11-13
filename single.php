@@ -10,7 +10,6 @@
 <div class="container">
 	<div class="row">
 
-		<?php while ( have_posts() ) : the_post(); ?>
 
 		<div class="col-md-12">
 			<date><?php the_date() ?></date>
@@ -23,8 +22,8 @@
 			</div>
 		</div>
 
-		<?php endwhile; ?>
 
 	</div> <!-- /.row -->
 </div> <!-- /.container -->
+<?php endwhile; ?>
 <?php get_footer() ?>

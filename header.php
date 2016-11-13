@@ -28,7 +28,10 @@
 </head>
 <body <?php body_class(); ?>>
 <nav class="navbar navbar-static-top navbar-dark bg-inverse">
-  <a class="navbar-brand" href="#"><?php bloginfo( 'name' ) ?></a>
+<?php 
+$url = home_url();
+?>
+  <a class="navbar-brand" href="<?php echo esc_url( $url ) ?>"><?php bloginfo( 'name' ) ?></a>
 <!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bsref-collapse" aria-controls="bsref-collapse" aria-expanded="false" aria-label="Toggle navigation"></button>-->
   <ul class="nav navbar-nav">
   <?php
