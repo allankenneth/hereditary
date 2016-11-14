@@ -1,12 +1,8 @@
 <?php get_header() ?>
 <?php while ( have_posts() ) : the_post(); ?>
 
-	<?php $video = get_post_meta($post->ID, 'Video', true); ?>
-	<?php if($video): ?>
-		<?php echo bsreference_video_embed($video); ?>
-	<?php endif; ?>
-
 <div class="container">
+
 	<div class="row">
 	<div class="col-md-12">
 		<?php if ( !is_front_page() ): ?>
@@ -24,6 +20,15 @@
 		<li class="breadcrumb-item active"><?php the_title() ?></li>
 		</ol>
 		<?php endif; ?>
+	</div>
+	<div class="row">
+	<div class="col-md-12">
+	
+	<?php $video = get_post_meta($post->ID, 'Video', true); ?>
+	<?php if($video): ?>
+		<?php echo bsreference_video_embed($video); ?>
+	<?php endif; ?>
+	</div>
 	</div>
 	<div class="col-md-8 offset-md-2">
 		<h1 class="pagetitle"><?php the_title() ?></h1>

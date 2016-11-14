@@ -9,9 +9,15 @@
 
 <div class="container">
 	<div class="row">
+	<div class="col-md-12">
+		<ol class="breadcrumb">
+		<li class="breadcrumb-item"><a href="/">Home</a></li>
+		<li class="breadcrumb-item"><a href="/blog">Blog</a></li>
+		<li class="breadcrumb-item active"><?php the_title() ?></li>
+		</ol>
+	</div>
 
-
-		<div class="col-md-12">
+		<div class="col-md-6 offset-md-3">
 			<date><?php the_date() ?></date>
 			<h1><?php the_title() ?></h1>
 			<div class="content">
