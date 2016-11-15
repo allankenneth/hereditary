@@ -55,4 +55,4 @@
 	</form>
 
 </nav>
-<div class="foo"><?php echo get_theme_mod("hereditary_foo"); ?></div>
+<div id="hereditaryfoo"><?php echo get_theme_mod("hereditary_foo"); ?></div>
