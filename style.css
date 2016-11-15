@@ -51,7 +51,6 @@ h2 {
 .current-cat {
 	font-weight: bold;
 }
-
 .hero {
 /*	background: url('/wp-content/uploads/2016/02/footbag-net-1.jpg') top center no-repeat; /*#76BA43;/wp-content/uploads/2016/02/hania-blue-sky.jpg*/
 	background-position: top center !important;
@@ -79,6 +78,10 @@ h2 {
 .custom-background .breadcrumb {
 	background: rgba(255,255,255,.6);
 }
+.custom-background .list-group-item.current_page_item {
+	background: rgba(255,255,255,1);
+}
+
 /* TODO figure out why I need to do the following
 .navbar-nav .nav-item+.nav-item is set in bootstrap which makes
 the first item in the nav menu with no left margin...
