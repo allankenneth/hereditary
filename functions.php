@@ -1,4 +1,6 @@
 <?php
+
+wp_enqueue_script("bootstrap", get_template_directory_uri() . "/bootstrap.min.js", array(), '',  true);
 require_once('wp_bootstrap_navwalker.php');
 require_once('wp_bootstrap_listwalker.php');
 require_once('wp_bootstrap_sidenavwalker.php');
