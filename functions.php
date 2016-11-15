@@ -76,3 +76,30 @@ function bsreference_video_embed($video_url) {
 	return $embedcode;
 
 }
+
+function hereditary_customize_register($wp_customize) 
+{
+	$wp_customize->add_section("hereditary", array(
+		"title" => __("Hereditary", "customizer_ads_sections"),
+		"priority" => 30,
+	));
+	$wp_customize->add_setting("hereditary_foo", array(
+		"default" => "",
+		"transport" => "postMessage",
+	));
+	$wp_customize->add_control(new WP_Customize_Control(
+		$wp_customize,
+		"hereditary_foo",
+		array(
+			"label" => __("Enter Hereditary Foo", "customizer_hereditary_foo_label"),
+			"section" => "hereditary",
+			"settings" => "hereditary_foo",
+			"type" => "textarea",
+		)
+	));
+}
+
+add_action("customize_register","hereditary_customize_register");
+
+
+
