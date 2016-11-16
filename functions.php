@@ -2,6 +2,7 @@
 
 wp_enqueue_script("bootstrap", get_template_directory_uri() . "/js/bootstrap.min.js", array("jquery"), '',  true);
 wp_enqueue_script("tether", get_template_directory_uri() . "/js/tether.min.js", array("jquery"), '',  true);
+wp_enqueue_script("themecutomizer", get_template_directory_uri() . "/js/theme-customizer.js", array("jquery"), '',  true);
 
 require_once('wp_bootstrap_navwalker.php');
 require_once('wp_bootstrap_sidenavwalker.php');

@@ -21,15 +21,22 @@
 ?></title>
 <meta name="description" content="<?php bloginfo( 'description' ) ?>">
 <link rel="profile" href="http://gmpg.org/xfn/11" />
-<link rel="stylesheet" type="text/css" media="all" href="/wp-content/themes/hereditary/node_modules/bootstrap/dist/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" media="all" href="/wp-content/themes/hereditary/node_modules/tether/dist/css/tether.min.css">
+<link rel="stylesheet" type="text/css" media="all" href="/wp-content/themes/hereditary/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" media="all" href="/wp-content/themes/hereditary/css/tether.min.css">
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>">
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
 <nav class="navbar navbar-static-top navbar-light">
-	<?php $url = home_url() ?>
-	<a class="navbar-brand" href="<?php echo esc_url( $url ) ?>"><?php bloginfo( 'name' ) ?></a>
+<?php 
+$url = home_url();
+$custom_logo_id = get_theme_mod( 'custom_logo' );
+$image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+?>
+	<a class="navbar-brand" href="<?php echo esc_url( $url ) ?>">
+		<img class="d-inline-block align-top logo" src="<?php echo $image[0] ?>" alt="<?php bloginfo( 'name' ) ?>">
+		<?php bloginfo( 'name' ) ?>
+	</a>
 	<button class="float-md-left hidden-sm-up navbar-toggler" 
 		type="button" 
 		data-toggle="collapse" 
