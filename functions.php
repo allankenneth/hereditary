@@ -1,8 +1,7 @@
 <?php
-
+//wp_enqueue_style( 'bootstrap', get_stylesheet_uri() );
 wp_enqueue_script("bootstrap", get_template_directory_uri() . "/js/bootstrap.min.js", array("jquery"), '',  true);
-wp_enqueue_script("tether", get_template_directory_uri() . "/js/tether.min.js", array("jquery"), '',  true);
-wp_enqueue_script("themecutomizer", get_template_directory_uri() . "/js/theme-customizer.js", array("jquery"), '',  true);
+wp_enqueue_script("tether", get_template_directory_uri() . "/js/tether.min.js", array("jquery"), '',  false);
 
 require_once('wp_bootstrap_navwalker.php');
 require_once('wp_bootstrap_sidenavwalker.php');
@@ -107,7 +106,7 @@ add_action("customize_register","hereditary_customize_register");
 
 function hereditary_customizer_live_preview()
 {
-	wp_enqueue_script("hereditary-themecustomizer", get_template_directory_uri() . "/theme-customizer.js", array("jquery", "customize-preview"), '',  true);
+	wp_enqueue_script("hereditary-themecustomizer", get_template_directory_uri() . "/js/theme-customizer.js", array("jquery", "customize-preview"), '',  true);
 }
 
 add_action("customize_preview_init", "hereditary_customizer_live_preview");
