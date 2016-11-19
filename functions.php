@@ -84,9 +84,17 @@ function hereditary_customize_register($wp_customize)
 {
 	$wp_customize->add_section("hereditary", array(
 		"title" => __("Hereditary", "customizer_ads_sections"),
-		"priority" => 30,
+		"priority" => 0,
 	));
 	$wp_customize->add_setting("hereditary_navbar", array(
+		"default" => "",
+		"transport" => "postMessage",
+	));
+	$wp_customize->add_setting("hereditary_excludepage", array(
+		"default" => "",
+		"transport" => "postMessage",
+	));
+	$wp_customize->add_setting("alpha_color_setting", array(
 		"default" => "",
 		"transport" => "postMessage",
 	));
@@ -105,8 +113,19 @@ function hereditary_customize_register($wp_customize)
 		),
 		)
 	));
-    // Alpha Color Picker control.
+        $wp_customize->add_control(new WP_Customize_Control(
+                $wp_customize,
+                "hereditary_excludepage",
+                array(  
+                        "label" => __("Exclude pages from menu", "customizer_hereditary_excludepage_label"),
+                        "section" => "hereditary",
+                        "settings" => "hereditary_excludepage",
+                        'type'     => 'text',
+                )
+        ));
 
+
+    // Alpha Color Picker control.
     require_once( dirname( __FILE__ ) . '/alpha-color-picker/alpha-color-picker.php' );
     $wp_customize->add_control(
         new Customize_Alpha_Color_Control(
