@@ -27,12 +27,13 @@
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-<nav class="navbar navbar-static-top navbar-light">
 <?php 
+$navbar_class = get_theme_mod("hereditary_navbar");
 $url = home_url();
 $custom_logo_id = get_theme_mod( 'custom_logo' );
 $image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
 ?>
+<nav class="navbar navbar-static-top <?php echo $navbar_class ?>">
 	<a class="navbar-brand" href="<?php echo esc_url( $url ) ?>">
 		<?php if($custom_logo_id): ?>
 		<img class="d-inline-block align-top logo" 

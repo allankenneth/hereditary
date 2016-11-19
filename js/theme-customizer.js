@@ -1,7 +1,7 @@
 (function($){
-	wp.customize("hereditary_foo", function(value) {
+	wp.customize("hereditary_navbar", function(value) {
 		value.bind(function(newval) {
-			$("#hereditaryfoo").html(newval);
+			$("#navbarfoo").html(newval);
 		} );
 	});
 })(jQuery);

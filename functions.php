@@ -86,18 +86,23 @@ function hereditary_customize_register($wp_customize)
 		"title" => __("Hereditary", "customizer_ads_sections"),
 		"priority" => 30,
 	));
-	$wp_customize->add_setting("hereditary_foo", array(
+	$wp_customize->add_setting("hereditary_navbar", array(
 		"default" => "",
 		"transport" => "postMessage",
 	));
 	$wp_customize->add_control(new WP_Customize_Control(
 		$wp_customize,
-		"hereditary_foo",
+		"hereditary_navbar",
 		array(
-			"label" => __("Enter Hereditary Foo", "customizer_hereditary_foo_label"),
+			"label" => __("Navbar Color", "customizer_hereditary_navbar_label"),
 			"section" => "hereditary",
-			"settings" => "hereditary_foo",
-			"type" => "textarea",
+			"settings" => "hereditary_navbar",
+			'type'     => 'radio',
+			'choices'  => array(
+				'navbar-light'  => 'Transparent',
+				'navbar-dark bg-inverse' => 'Dark',
+				'navbar-light bg-faded' => 'Light'
+		),
 		)
 	));
 }
