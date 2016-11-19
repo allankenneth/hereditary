@@ -29,6 +29,7 @@
 <body <?php body_class(); ?>>
 <?php 
 $navbar_class = get_theme_mod("hereditary_navbar");
+$navbar_foo = get_theme_mod("alpha_color_setting");
 $url = home_url();
 $custom_logo_id = get_theme_mod( 'custom_logo' );
 $image = wp_get_attachment_image_src( $custom_logo_id , 'full' );

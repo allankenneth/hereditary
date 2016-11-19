@@ -105,6 +105,28 @@ function hereditary_customize_register($wp_customize)
 		),
 		)
 	));
+    // Alpha Color Picker control.
+
+    require_once( dirname( __FILE__ ) . '/alpha-color-picker/alpha-color-picker.php' );
+    $wp_customize->add_control(
+        new Customize_Alpha_Color_Control(
+            $wp_customize,
+            'alpha_color_control',
+            array(
+                'label'         => __( 'Alpha Color Picker', 'yourtextdomain' ),
+                'section'       => 'hereditary',
+                'settings'      => 'alpha_color_setting',
+                'show_opacity'  => true, // Optional.
+                'palette'   => array(
+                    'rgb(150, 50, 220)', // RGB, RGBa, and hex values supported
+                    'rgba(50,50,50,0.8)',
+                    'rgba( 255, 255, 255, 0.2 )', // Different spacing = no problem
+                    '#00CC99' // Mix of color types = no problem
+                )
+            )
+        )
+    );
+
 }
 
 add_action("customize_register","hereditary_customize_register");
@@ -115,4 +137,5 @@ function hereditary_customizer_live_preview()
 }
 
 add_action("customize_preview_init", "hereditary_customizer_live_preview");
+
 
