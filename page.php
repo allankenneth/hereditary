@@ -43,13 +43,12 @@
     $children = get_pages('child_of='.$post->ID);
     $parent = $post->post_parent;
     $siblings =  get_pages('child_of='.$parent);
-
+    // &$output, $page, $depth, $args, $current_page
     if( count($children) != 0) {
        $args = array(
          'depth' => 1,
-	 'exclude' => '',
-         'title_li' => '',
 	 'exclude' => $excludes,
+         'title_li' => '',
          'child_of' => $post->ID,
 	 'walker'   => new Sidenav_walker()
        );

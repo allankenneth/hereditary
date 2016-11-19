@@ -1,6 +1,6 @@
 <?php
 class Sidenav_walker extends Walker_page {
-        function start_el(&$output, $page, $depth, $args, $current_page) {
+        function start_el(&$output, $page, $depth = 0, $args = Array(), $current_page = 0) {
         if ( $depth )
             $indent = str_repeat("\t", $depth);
         else
