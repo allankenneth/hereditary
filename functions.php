@@ -82,59 +82,52 @@ function bsreference_video_embed($video_url) {
 
 function hereditary_customize_register($wp_customize) 
 {
+
+	require_once( dirname( __FILE__ ) . '/alpha-color-picker/alpha-color-picker.php' );
+
 	$wp_customize->add_section("hereditary", array(
-		"title" => __("Hereditary", "customizer_ads_sections"),
+		"title" => __("Hereditary", "customizer_hereditary_sections"),
 		"priority" => 0,
 	));
 	$wp_customize->add_setting("hereditary_navbar", array(
 		"default" => "",
 		"transport" => "postMessage",
 	));
-	$wp_customize->add_setting("hereditary_excludepage", array(
+	$wp_customize->add_setting("hereditary_navbar_color", array(
 		"default" => "",
 		"transport" => "postMessage",
 	));
-	$wp_customize->add_setting("alpha_color_setting", array(
+	$wp_customize->add_setting("hereditary_contentbg", array(
 		"default" => "",
 		"transport" => "postMessage",
 	));
+	$wp_customize->add_setting("hereditary_excludepages", array(
+		"default" => "",
+		"transport" => "postMessage",
+	));
+
 	$wp_customize->add_control(new WP_Customize_Control(
 		$wp_customize,
 		"hereditary_navbar",
 		array(
-			"label" => __("Navbar Color", "customizer_hereditary_navbar_label"),
+			"label" => __("Navbar Text Color", "customizer_hereditary_navbar_label"),
 			"section" => "hereditary",
 			"settings" => "hereditary_navbar",
 			'type'     => 'radio',
 			'choices'  => array(
-				'navbar-light'  => 'Transparent',
-				'navbar-dark bg-inverse' => 'Dark',
-				'navbar-light bg-faded' => 'Light'
+				'navbar-light'  => 'Dark text',
+				'text-white' => 'White text',
 		),
 		)
 	));
-        $wp_customize->add_control(new WP_Customize_Control(
-                $wp_customize,
-                "hereditary_excludepage",
-                array(  
-                        "label" => __("Exclude pages from menu", "customizer_hereditary_excludepage_label"),
-                        "section" => "hereditary",
-                        "settings" => "hereditary_excludepage",
-                        'type'     => 'text',
-                )
-        ));
-
-
-    // Alpha Color Picker control.
-    require_once( dirname( __FILE__ ) . '/alpha-color-picker/alpha-color-picker.php' );
     $wp_customize->add_control(
         new Customize_Alpha_Color_Control(
             $wp_customize,
             'alpha_color_control',
             array(
-                'label'         => __( 'Alpha Color Picker', 'yourtextdomain' ),
+                'label'         => __( 'Navbar Color', 'customizer_hereditary_navbar_color_label' ),
                 'section'       => 'hereditary',
-                'settings'      => 'alpha_color_setting',
+                'settings'      => 'hereditary_navbar_color',
                 'show_opacity'  => true, // Optional.
                 'palette'   => array(
                     'rgb(150, 50, 220)', // RGB, RGBa, and hex values supported
@@ -145,6 +138,35 @@ function hereditary_customize_register($wp_customize)
             )
         )
     );
+        
+    $wp_customize->add_control(
+        new Customize_Alpha_Color_Control(
+            $wp_customize,
+            'main_content_bg',
+            array(
+                'label'         => __( 'Main Content Background Color', 'yourtextdomain' ),
+                'section'       => 'hereditary',
+                'settings'      => 'hereditary_contentbg',
+                'show_opacity'  => true, // Optional.
+                'palette'   => array(
+                    'rgb(150, 50, 220)', // RGB, RGBa, and hex values supported
+                    'rgba(50,50,50,0.8)',
+                    'rgba( 255, 255, 255, 0.2 )', // Different spacing = no problem
+                    '#00CC99' // Mix of color types = no problem
+                )
+            )
+        )
+    );
+    $wp_customize->add_control(new WP_Customize_Control(
+        $wp_customize,
+        "hereditary_excludepage",
+        array(  
+            "label" => __("Exclude pages from menu", "customizer_hereditary_excludepage_label"),
+            "section" => "hereditary",
+            "settings" => "hereditary_excludepages",
+            "type"     => "text",
+                )
+    ));
 
 }
 

@@ -34,11 +34,12 @@
 		<h1 class="pagetitle"><?php the_title() ?></h1>
 
 	</div>
-
 	<div class="col-md-8 offset-md-2">
 	<div class="row">
 
 <?php
+    $mainbgcolor = get_theme_mod("hereditary_contentbg");
+    $excludes = get_theme_mod("hereditary_excludepages");
     $children = get_pages('child_of='.$post->ID);
     $parent = $post->post_parent;
     $siblings =  get_pages('child_of='.$parent);
@@ -48,6 +49,7 @@
          'depth' => 1,
 	 'exclude' => '',
          'title_li' => '',
+	 'exclude' => $excludes,
          'child_of' => $post->ID,
 	 'walker'   => new Sidenav_walker()
        );
@@ -55,7 +57,7 @@
     } elseif($parent != 0) {
         $args = array(
              'depth' => 1,
-	     'exclude' => '307,305',
+	     'exclude' => $excludes,
              'title_li' => '',
              'child_of' => $parent,
 	     'walker'   => new Sidenav_walker()
@@ -80,7 +82,9 @@
 		<div class="featured-image">
 			<?php the_post_thumbnail() ?>
 		</div>
+		<div class="maincontentbg" style="background: <?php echo $mainbgcolor ?>;">
 		<?php the_content() ?>
+		</div>
 		<div><?php edit_post_link( __( 'Edit' )); ?></div>
 	</div>
 </div>
