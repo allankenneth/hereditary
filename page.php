@@ -38,6 +38,9 @@
 	<div class="row">
 
 <?php
+
+
+    $mainbgtxtclass = get_theme_mod("hereditary_content_text");
     $mainbgcolor = get_theme_mod("hereditary_contentbg");
     $excludes = get_theme_mod("hereditary_excludepages");
     $children = get_pages('child_of='.$post->ID);
@@ -81,7 +84,7 @@
 		<div class="featured-image">
 			<?php the_post_thumbnail() ?>
 		</div>
-		<div class="maincontentbg" style="background: <?php echo $mainbgcolor ?>;">
+		<div class="<?php echo $mainbgtxtclass ?>" style="background: <?php echo $mainbgcolor ?>;">
 		<?php the_content() ?>
 		</div>
 		<div><?php edit_post_link( __( 'Edit' )); ?></div>

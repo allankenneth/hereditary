@@ -24,18 +24,39 @@
 <link rel="stylesheet" type="text/css" media="all" href="/wp-content/themes/hereditary/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" media="all" href="/wp-content/themes/hereditary/css/tether.min.css">
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>">
+<style>
+<?php 
+$linkcolor = get_theme_mod("hereditary_links");
+$mainbgcolor = get_theme_mod("hereditary_contentbg");
+?>
+a {
+	color: <?php echo $linkcolor ?>;
+}
+.custom-background .list-group-item,
+.custom-background .breadcrumb {
+	background-color: <?php echo $mainbgcolor; ?>;
+	border: 0;
+}
+.custom-background .list-group-item-warning {
+}
+.coverbg {
+	-webkit-background-size: cover !important;
+	-moz-background-size: cover !important;
+	-o-background-size: cover !important;
+	background-size: cover !important;
+}
+</style>
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
 <?php 
 $navbar_class = get_theme_mod("hereditary_navbar");
 $navbar_color = get_theme_mod("hereditary_navbar_color");
-$navbar_foo = get_theme_mod("alpha_color_setting");
 $url = home_url();
 $custom_logo_id = get_theme_mod( 'custom_logo' );
 $image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
 ?>
-<nav class="navbar navbar-static-top <?php echo $navbar_class ?>" style="background-color: <?php echo $navbar_color ?>">
+<nav class="<?php echo $navbar_class ?>" style="background-color: <?php echo $navbar_color ?>">
 	<a class="navbar-brand" href="<?php echo esc_url( $url ) ?>">
 		<?php if($custom_logo_id): ?>
 		<img class="d-inline-block align-top logo" 

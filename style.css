@@ -39,12 +39,6 @@ h1 {
 h2 {
 	margin-bottom: 20px;
 }
-.navbar a {
-	color: #FFF;
-}
-.navbar .dropdown-menu a {
-	color: #333 !important;
-}
 .container {
 	margin: 30px auto;
 }
@@ -74,20 +68,16 @@ h2 {
 .list-group .children {
 	display: none;
 }
-.custom-background .list-group-item,
-.custom-background .breadcrumb {
-	background: rgba(255,255,255,.6);
-}
-.custom-background .list-group-item.current_page_item {
-	background: rgba(255,255,255,1);
-}
-
 /* TODO figure out why I need to do the following
 .navbar-nav .nav-item+.nav-item is set in bootstrap which makes
 the first item in the nav menu with no left margin...
 */
 .navbar-nav .nav-item {
 	margin-left: 1rem;
+}
+
+.maincontentbg {
+	padding: 15px;
 }
 
 

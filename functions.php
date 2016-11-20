@@ -89,6 +89,11 @@ function hereditary_customize_register($wp_customize)
 		"title" => __("Hereditary", "customizer_hereditary_sections"),
 		"priority" => 0,
 	));
+	$wp_customize->add_setting("hereditary_links", array(
+		"default" => "",
+		"transport" => "postMessage",
+	));
+
 	$wp_customize->add_setting("hereditary_navbar", array(
 		"default" => "",
 		"transport" => "postMessage",
@@ -101,6 +106,11 @@ function hereditary_customize_register($wp_customize)
 		"default" => "",
 		"transport" => "postMessage",
 	));
+	$wp_customize->add_setting("hereditary_content_text", array(
+		"default" => "",
+		"transport" => "postMessage",
+	));
+
 	$wp_customize->add_setting("hereditary_excludepages", array(
 		"default" => "",
 		"transport" => "postMessage",
@@ -115,8 +125,8 @@ function hereditary_customize_register($wp_customize)
 			"settings" => "hereditary_navbar",
 			'type'     => 'radio',
 			'choices'  => array(
-				'navbar-light'  => 'Dark text',
-				'text-white' => 'White text',
+				'navbar navbar-static-top navbar-light'  => 'Dark text',
+				'navbar navbar-static-top text-white' => 'White text',
 		),
 		)
 	));
@@ -138,6 +148,21 @@ function hereditary_customize_register($wp_customize)
             )
         )
     );
+
+ 	$wp_customize->add_control(new WP_Customize_Control(
+		$wp_customize,
+		"hereditary_content_text",
+		array(
+			"label" => __("Content Text Color", "customizer_hereditary_navbar_label"),
+			"section" => "hereditary",
+			"settings" => "hereditary_content_text",
+			'type'     => 'radio',
+			'choices'  => array(
+				'maincontentbg'  => 'Dark text',
+				'maincontentbg text-white' => 'White text',
+			),
+		)
+	));       
         
     $wp_customize->add_control(
         new Customize_Alpha_Color_Control(
@@ -147,6 +172,24 @@ function hereditary_customize_register($wp_customize)
                 'label'         => __( 'Main Content Background Color', 'yourtextdomain' ),
                 'section'       => 'hereditary',
                 'settings'      => 'hereditary_contentbg',
+                'show_opacity'  => true, // Optional.
+                'palette'   => array(
+                    'rgb(150, 50, 220)', // RGB, RGBa, and hex values supported
+                    'rgba(50,50,50,0.8)',
+                    'rgba( 255, 255, 255, 0.2 )', // Different spacing = no problem
+                    '#00CC99' // Mix of color types = no problem
+                )
+            )
+        )
+    );
+    $wp_customize->add_control(
+        new Customize_Alpha_Color_Control(
+            $wp_customize,
+            'hereditary_links',
+            array(
+                'label'         => __( 'Link Color', 'customizer_hereditary_links_color_label' ),
+                'section'       => 'hereditary',
+                'settings'      => 'hereditary_links',
                 'show_opacity'  => true, // Optional.
                 'palette'   => array(
                     'rgb(150, 50, 220)', // RGB, RGBa, and hex values supported
