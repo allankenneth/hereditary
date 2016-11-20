@@ -39,7 +39,7 @@ a {
 }
 .custom-background .list-group-item-warning {
 }
-.coverbg {
+.custom-background {
 	-webkit-background-size: cover !important;
 	-moz-background-size: cover !important;
 	-o-background-size: cover !important;
