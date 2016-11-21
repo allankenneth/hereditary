@@ -4,6 +4,12 @@
 			$(".navbar").removeClass().addClass(newval);
 		} );
 	});
+	wp.customize("hereditary_pageheader", function(value) {
+		value.bind(function(newval) {
+			cla = 'color: ' + newval;
+			$(".pagetitle").attr('style', cla);
+		} );
+	});
 	wp.customize("hereditary_navbar_color", function(value) {
 		value.bind(function(newval) {
 			cla = 'background-color: ' + newval;

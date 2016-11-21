@@ -31,7 +31,8 @@
 	</div>
 	</div>
 	<div class="col-md-8 offset-md-2">
-		<h1 class="pagetitle"><?php the_title() ?></h1>
+<?php $pageheader = get_theme_mod("hereditary_pageheader"); ?>
+		<h1 style="color:<?php echo $pageheader ?>" class="pagetitle"><?php the_title() ?></h1>
 
 	</div>
 	<div class="col-md-8 offset-md-2">
