@@ -26,16 +26,18 @@
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>">
 <style>
 <?php 
+$headercolor = get_theme_mod("hereditary_header_color");
 $linkcolor = get_theme_mod("hereditary_links");
 $hovercolor = get_theme_mod("hereditary_links_hover");
+$navlight = get_theme_mod("hereditary_nav_highlight");
 $mainbgcolor = get_theme_mod("hereditary_contentbg");
 ?>
-.maincontentbg a,
+.maincontentbg a:not(.btn),
 .breadcrumb a,
 .list-group-item a {
 	color: <?php echo $linkcolor ?>;
 }
-.maincontentbg a:hover,
+.maincontentbg a:not(.btn):hover,
 .breadcrumb a:hover,
 .list-group-item a:hover {
 	color: <?php echo $hovercolor ?>;
@@ -46,8 +48,15 @@ $mainbgcolor = get_theme_mod("hereditary_contentbg");
 	border: 0;
 }
 .custom-background .list-group-item-warning {
+	background-color: <?php echo $navlight; ?>;
 }
-.coverbg {
+.breadcrumb {
+
+}
+.pagetitle {
+	color: <?php echo $headercolor ?>;
+}
+.custom-background {
 	-webkit-background-size: cover !important;
 	-moz-background-size: cover !important;
 	-o-background-size: cover !important;
@@ -58,13 +67,14 @@ $mainbgcolor = get_theme_mod("hereditary_contentbg");
 </head>
 <body <?php body_class(); ?>>
 <?php 
-$navbar_class = get_theme_mod("hereditary_navbar");
+$navpos = get_theme_mod("hereditary_navpos");
+$navbar_base = get_theme_mod("hereditary_navbar");
 $navbar_color = get_theme_mod("hereditary_navbar_color");
 $url = home_url();
 $custom_logo_id = get_theme_mod( 'custom_logo' );
 $image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
 ?>
-<nav class="<?php echo $navbar_class ?>" style="background-color: <?php echo $navbar_color ?>">
+<nav class="navbar navbar-full <?php echo $navpos ?> <?php echo $navbar_base ?>" style="background-color: <?php echo $navbar_color ?>">
 	<a class="navbar-brand" href="<?php echo esc_url( $url ) ?>">
 		<?php if($custom_logo_id): ?>
 		<img class="d-inline-block align-top logo" 
