@@ -19,7 +19,13 @@ $the_query = new WP_Query( $args ); ?>
 	<div class="col-md-6 offset-md-3">
 		<date><?php the_date() ?></date>
 		<h2><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
+<?php 
+    $mainbgtxtclass = get_theme_mod("hereditary_content_text");
+    $mainbgcolor = get_theme_mod("hereditary_contentbg");
+?>
+		<div class="<?php echo $mainbgtxtclass ?>" style="background: <?php echo $mainbgcolor ?>;">
 		<?php the_excerpt() ?>
+		</div>
 	</div>
 	</div>
 	<?php endwhile; ?>
