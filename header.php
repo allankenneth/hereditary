@@ -31,7 +31,11 @@ $linkcolor = get_theme_mod("hereditary_links");
 $hovercolor = get_theme_mod("hereditary_links_hover");
 $navlight = get_theme_mod("hereditary_nav_highlight");
 $mainbgcolor = get_theme_mod("hereditary_contentbg");
+$navpos = get_theme_mod("hereditary_navpos");
 ?>
+<?php if($navpos): ?>
+body, html { padding-top: 30px; }
+<?php endif; ?>
 .maincontentbg a:not(.btn),
 .breadcrumb a,
 .list-group-item a {
@@ -67,7 +71,6 @@ $mainbgcolor = get_theme_mod("hereditary_contentbg");
 </head>
 <body <?php body_class(); ?>>
 <?php 
-$navpos = get_theme_mod("hereditary_navpos");
 $navbar_base = get_theme_mod("hereditary_navbar");
 $navbar_color = get_theme_mod("hereditary_navbar_color");
 $url = home_url();
