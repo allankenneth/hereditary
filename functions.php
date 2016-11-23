@@ -121,7 +121,7 @@ function hereditary_customize_register($wp_customize)
 		"hereditary_navbar",
 		array(
 			"label" => __("Navbar Text Color", "customizer_hereditary_navbar_label"),
-			"section" => "hereditary",
+			"section" => "colors",
 			"settings" => "hereditary_navbar",
 			'type'     => 'radio',
 			'choices'  => array(
@@ -136,7 +136,7 @@ function hereditary_customize_register($wp_customize)
             'alpha_color_control',
             array(
                 'label'         => __( 'Navbar Color', 'customizer_hereditary_navbar_color_label' ),
-                'section'       => 'hereditary',
+                'section'       => 'colors',
                 'settings'      => 'hereditary_navbar_color',
                 'show_opacity'  => true, // Optional.
                 'palette'   => array(
@@ -154,7 +154,7 @@ function hereditary_customize_register($wp_customize)
 		"hereditary_content_text",
 		array(
 			"label" => __("Content Text Color", "customizer_hereditary_navbar_label"),
-			"section" => "hereditary",
+			"section" => "colors",
 			"settings" => "hereditary_content_text",
 			'type'     => 'radio',
 			'choices'  => array(
@@ -170,7 +170,7 @@ function hereditary_customize_register($wp_customize)
             'main_content_bg',
             array(
                 'label'         => __( 'Main Content Background Color', 'yourtextdomain' ),
-                'section'       => 'hereditary',
+                'section'       => 'colors',
                 'settings'      => 'hereditary_contentbg',
                 'show_opacity'  => true, // Optional.
                 'palette'   => array(
@@ -188,7 +188,7 @@ function hereditary_customize_register($wp_customize)
             'hereditary_links',
             array(
                 'label'         => __( 'Link Color', 'customizer_hereditary_links_color_label' ),
-                'section'       => 'hereditary',
+                'section'       => 'colors',
                 'settings'      => 'hereditary_links',
                 'show_opacity'  => true, // Optional.
                 'palette'   => array(
