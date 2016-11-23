@@ -27,10 +27,18 @@
 <style>
 <?php 
 $linkcolor = get_theme_mod("hereditary_links");
+$hovercolor = get_theme_mod("hereditary_links_hover");
 $mainbgcolor = get_theme_mod("hereditary_contentbg");
 ?>
-a {
+.maincontentbg a,
+.breadcrumb a,
+.list-group-item a {
 	color: <?php echo $linkcolor ?>;
+}
+.maincontentbg a:hover,
+.breadcrumb a:hover,
+.list-group-item a:hover {
+	color: <?php echo $hovercolor ?>;
 }
 .custom-background .list-group-item,
 .custom-background .breadcrumb {

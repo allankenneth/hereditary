@@ -21,5 +21,10 @@
 			$(".maincontentbg").attr('style', cla);
 		} );
 	});
+	wp.customize("hereditary_links_hover", function(value) {
+		value.bind(function(newval) {
+			$(".maincontentbg").css('a', newval);
+		} );
+	});
 
 })(jQuery);
