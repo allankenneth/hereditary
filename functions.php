@@ -1,8 +1,11 @@
 <?php
-//wp_enqueue_style( 'bootstrap', get_stylesheet_uri() );
-wp_enqueue_script("bootstrap", get_template_directory_uri() . "/js/bootstrap.min.js", array("jquery"), '',  true);
-wp_enqueue_script("tether", get_template_directory_uri() . "/js/tether.min.js", array("jquery"), '',  false);
-
+function enqueue() {
+	wp_enqueue_style('bootstrap', get_stylesheet_directory_uri() . '/css/bootstrap.min.css');
+	wp_enqueue_style('bootstrap', get_stylesheet_directory_uri() . '/css/tether.min.css');
+	wp_enqueue_script('bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '',  true);
+	wp_enqueue_script('tether', get_template_directory_uri() . '/js/tether.min.js', array('jquery'), '',  true);
+}
+add_action( 'wp_enqueue_scripts', 'enqueue');
 require_once('wp_bootstrap_navwalker.php');
 require_once('wp_bootstrap_sidenavwalker.php');
 register_nav_menus( array('primary' => 'Primary Navigation') );

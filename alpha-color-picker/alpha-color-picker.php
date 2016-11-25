@@ -60,7 +60,7 @@ class Customize_Alpha_Color_Control extends WP_Customize_Control {
 			'1.0.0'
 		);
 	}
-
+	
 	/**
 	 * Render the control.
 	 */

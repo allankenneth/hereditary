@@ -10,7 +10,7 @@ class Sidenav_walker extends Walker_page {
         $css_class = array('list-group-item', 'page-item-'.$page->ID);
         if ( !empty($current_page) ) {
             $_current_page = get_page( $current_page );
-            _get_post_ancestors($_current_page);
+            get_post_ancestors($_current_page);
             if ( isset($_current_page->ancestors) && in_array($page->ID, (array) $_current_page->ancestors) )
                 $css_class[] = 'current_page_ancestor';
             if ( $page->ID == $current_page )

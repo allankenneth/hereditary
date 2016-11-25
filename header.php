@@ -21,9 +21,8 @@
 ?></title>
 <meta name="description" content="<?php bloginfo( 'description' ) ?>">
 <link rel="profile" href="http://gmpg.org/xfn/11" />
-<link rel="stylesheet" type="text/css" media="all" href="/wp-content/themes/hereditary/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" media="all" href="/wp-content/themes/hereditary/css/tether.min.css">
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>">
+<?php wp_head(); ?>
 <style>
 <?php 
 $headercolor = get_theme_mod("hereditary_header_color");
@@ -67,7 +66,6 @@ body, html { padding-top: 30px; }
 	background-size: cover !important;
 }
 </style>
-<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
 <?php 
