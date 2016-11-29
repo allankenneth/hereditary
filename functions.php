@@ -8,6 +8,7 @@ function enqueue() {
 add_action( 'wp_enqueue_scripts', 'enqueue');
 require_once('wp_bootstrap_navwalker.php');
 require_once('wp_bootstrap_sidenavwalker.php');
+require_once('wp_bootstrap_listwalker.php');
 register_nav_menus( array('primary' => 'Primary Navigation') );
 add_theme_support( 'post-thumbnails' );
 add_theme_support( 'widgets' );
@@ -333,4 +334,64 @@ function hereditary_customizer_live_preview()
 
 add_action("customize_preview_init", "hereditary_customizer_live_preview");
 
+class My_Widget extends WP_Widget {
 
+	/**
+	 * Sets up the widgets name etc
+	 */
+	public function __construct() {
+		$widget_ops = array( 
+			'classname' => 'my_widget',
+			'description' => 'My Widget is awesome',
+		);
+		parent::__construct( 'my_widget', 'My Widget', $widget_ops );
+	}
+
+	/**
+	 * Outputs the content of the widget
+	 *
+	 * @param array $args
+	 * @param array $instance
+	 */
+	public function widget( $args, $instance ) {
+		echo $args['before_widget'];
+		if ( $title ) {
+			echo $args['before_title'] . $title . $args['after_title'];
+		}
+		$cat_args = array(
+			'orderby'      => 'name',
+			'show_count'   => $c,
+			'hierarchical' => $h,
+		);
+		$cat_args['title_li'] = '';
+		//wp_list_categories( $cat_args );
+		$cats = get_categories();
+		foreach($cats as $cat): ?>
+		<?php echo $cat->name ?><br>
+		<?php 
+		endforeach;
+		echo $args['after_widget'];
+	}
+
+	/**
+	 * Outputs the options form on admin
+	 *
+	 * @param array $instance The widget options
+	 */
+	public function form( $instance ) {
+		// outputs the options form on admin
+	}
+
+	/**
+	 * Processing widget options on save
+	 *
+	 * @param array $new_instance The new options
+	 * @param array $old_instance The previous options
+	 */
+	public function update( $new_instance, $old_instance ) {
+		// processes widget options to be saved
+	}
+}
+add_action( 'widgets_init', function(){
+	register_widget( 'My_Widget' );
+});
