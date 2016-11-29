@@ -18,32 +18,15 @@ add_theme_support( 'custom-logo');
  * Register our sidebars and widgetized areas.
  *
  */
-function bsreference_widgets_init() {
+function hereditary_widgets_init() {
 
         register_sidebar( array(
-                'name'          => 'Home Primary',
-                'id'            => 'home_primary',
+                'name'          => 'Sidebar',
+                'id'            => 'sidebar',
                 'before_widget' => '',
                 'after_widget'  => '',
-                'before_title'  => '',
-                'after_title'   => '',
-        ) );
-        register_sidebar( array(
-                'name'          => 'Home Secondary',
-                'id'            => 'home_secondary',
-                'before_widget' => '<div class="col-md-4">',
-                'after_widget'  => '</div>',
                 'before_title'  => '<h1>',
                 'after_title'   => '</h1>',
-        ) );
-
-        register_sidebar( array(
-                'name'          => 'Menu Widgets',
-                'id'            => 'menu_widgets',
-                'before_widget' => '',
-                'after_widget'  => '',
-                'before_title'  => '',
-                'after_title'   => '',
         ) );
         register_sidebar( array(
                 'name'          => 'Footer',
@@ -56,11 +39,11 @@ function bsreference_widgets_init() {
 
 
 }
-add_action( 'widgets_init', 'bsreference_widgets_init' );
+add_action( 'widgets_init', 'hereditary_widgets_init' );
 
 
 
-function bsreference_video_embed($video_url) {
+function hereditary_video_embed($video_url) {
 	$link = parse_url($video_url);
 	$provider = $link['host'];
 	$provider = explode("www.",$provider);
@@ -138,6 +121,7 @@ function hereditary_customize_register($wp_customize)
 		"default" => "",
 		"transport" => "postMessage",
 	));
+
 	$wp_customize->add_control(new WP_Customize_Control(
 		$wp_customize,
 		"hereditary_navpos",

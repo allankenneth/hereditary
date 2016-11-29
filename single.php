@@ -17,7 +17,10 @@
 		</ol>
 	</div>
 
-		<div class="col-md-6 offset-md-3">
+		<div class="col-md-6 offset-md-1">
+			<div class="featured-image">
+				<?php the_post_thumbnail() ?>
+			</div>
 			<date><?php the_date() ?></date>
 			<h1><?php the_title() ?></h1>
 			<div class="content">
@@ -28,8 +31,14 @@
 			</div>
 		</div>
 
+<?php endwhile; ?>
+	<div class="col-md-4">
+	<?php if ( is_active_sidebar( 'sidebar' ) ) : ?>
+		<?php dynamic_sidebar( 'sidebar' ); ?>
+	<?php endif; ?>
 
+	</div>
 	</div> <!-- /.row -->
 </div> <!-- /.container -->
-<?php endwhile; ?>
+
 <?php get_footer() ?>

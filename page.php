@@ -40,7 +40,6 @@
 
 <?php
 
-
     $mainbgtxtclass = get_theme_mod("hereditary_content_text");
     $mainbgcolor = get_theme_mod("hereditary_contentbg");
     $excludes = get_theme_mod("hereditary_excludepages");
