@@ -3,9 +3,10 @@
 <div class="container">
 	<div class="row">
 
+	<div class="col-md-5 offset-md-2">
 		<?php while ( have_posts() ) : the_post(); ?>
 
-		<div class="col-md-6 offset-md-3">
+		<div class="<?php post_class() ?>">
 			<date><?php the_date() ?></date>
 			<h1><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h1>
 <?php 
@@ -22,6 +23,13 @@
 		</div>
 
 		<?php endwhile; ?>
+	</div>
+	<div class="col-md-3">
+	<?php if ( is_active_sidebar( 'sidebar' ) ) : ?>
+		<?php dynamic_sidebar( 'sidebar' ); ?>
+	<?php endif; ?>
+
+	</div>
 
 	</div> <!-- /.row -->
 </div> <!-- /.container -->
