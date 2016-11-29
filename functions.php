@@ -8,7 +8,6 @@ function enqueue() {
 add_action( 'wp_enqueue_scripts', 'enqueue');
 require_once('wp_bootstrap_navwalker.php');
 require_once('wp_bootstrap_sidenavwalker.php');
-require_once('wp_bootstrap_listwalker.php');
 register_nav_menus( array('primary' => 'Primary Navigation') );
 add_theme_support( 'post-thumbnails' );
 add_theme_support( 'widgets' );
