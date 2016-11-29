@@ -26,7 +26,7 @@
 	
 	<?php $video = get_post_meta($post->ID, 'Video', true); ?>
 	<?php if($video): ?>
-		<?php echo bsreference_video_embed($video); ?>
+		<?php echo hereditary_video_embed($video); ?>
 	<?php endif; ?>
 	</div>
 	</div>
