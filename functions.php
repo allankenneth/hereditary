@@ -1,11 +1,11 @@
 <?php
-function enqueue() {
+function hereditary_enqueue() {
 	wp_enqueue_style('bootstrap', get_stylesheet_directory_uri() . '/css/bootstrap.min.css');
 	wp_enqueue_style('bootstrap', get_stylesheet_directory_uri() . '/css/tether.min.css');
 	wp_enqueue_script('bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '',  true);
 	wp_enqueue_script('tether', get_template_directory_uri() . '/js/tether.min.js', array('jquery'), '',  true);
 }
-add_action( 'wp_enqueue_scripts', 'enqueue');
+add_action( 'wp_enqueue_scripts', 'hereditary_enqueue');
 require_once('wp_bootstrap_navwalker.php');
 require_once('wp_bootstrap_sidenavwalker.php');
 register_nav_menus( array('primary' => 'Primary Navigation') );
@@ -340,10 +340,10 @@ class My_Widget extends WP_Widget {
 	 */
 	public function __construct() {
 		$widget_ops = array( 
-			'classname' => 'my_widget',
-			'description' => 'My Widget is awesome',
+			'classname' => 'bootstrap_categories',
+			'description' => 'Bootstrap List Group Categories',
 		);
-		parent::__construct( 'my_widget', 'My Widget', $widget_ops );
+		parent::__construct( 'bootstrap_categories', 'Bootstrap List Group Categories', $widget_ops );
 	}
 
 	/**
@@ -364,12 +364,13 @@ class My_Widget extends WP_Widget {
 		);
 		$cat_args['title_li'] = '';
 		//wp_list_categories( $cat_args );
-		$cats = get_categories();
-		foreach($cats as $cat): ?>
-		<?php echo $cat->name ?><br>
-		<?php 
-		endforeach;
-		echo $args['after_widget'];
+		$cats = get_categories(); ?>
+		<ul class="list-group">
+		<?php foreach($cats as $cat): ?>
+		<li class="list-group-item"><a href="/category/<?php echo $cat->slug ?>"><?php echo $cat->name ?></a></li>
+		<?php endforeach; ?>
+		</ul>
+		<?php echo $args['after_widget'];
 	}
 
 	/**
