@@ -1,3 +1,10 @@
+<?php // Setup customizer variables
+$headercolor = get_theme_mod("hereditary_header_color");
+$linkcolor = get_theme_mod("hereditary_links");
+$hovercolor = get_theme_mod("hereditary_links_hover");
+$navlight = get_theme_mod("hereditary_nav_highlight");
+$mainbgcolor = get_theme_mod("hereditary_contentbg");
+$navpos = get_theme_mod("hereditary_navpos"); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,14 +31,6 @@
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>">
 <?php wp_head(); ?>
 <style>
-<?php 
-$headercolor = get_theme_mod("hereditary_header_color");
-$linkcolor = get_theme_mod("hereditary_links");
-$hovercolor = get_theme_mod("hereditary_links_hover");
-$navlight = get_theme_mod("hereditary_nav_highlight");
-$mainbgcolor = get_theme_mod("hereditary_contentbg");
-$navpos = get_theme_mod("hereditary_navpos");
-?>
 <?php if($navpos): ?>
 body, html { padding-top: 30px; }
 <?php endif; ?>
@@ -43,7 +42,7 @@ body, html { padding-top: 30px; }
 .maincontentbg a:not(.btn):hover,
 .breadcrumb a:hover,
 .list-group-item a:hover {
-	color: <?php echo $hovercolor ?>;
+color: <?php echo $hovercolor ?>;
 }
 .custom-background .list-group-item,
 .custom-background .breadcrumb {
@@ -85,13 +84,14 @@ $image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
 		<?php endif ?>
 		<?php bloginfo( 'name' ) ?>
 	</a>
-	<button class="float-md-left hidden-sm-up navbar-toggler" 
+	<button class="float-md-right hidden-sm-up navbar-toggler" 
 		type="button" 
 		data-toggle="collapse" 
 		data-target="#hereditary-collapse" 
 		aria-controls="bsref-collapse" aria-expanded="false" aria-label="Toggle navigation">
 	</button>
 
+	<div class="collapse navbar-toggleable-md" id="hereditary-collapse">
 	<ul class="float-md-left nav navbar-nav">
 	<?php wp_nav_menu( array(
 		'menu'              => 'primary',
@@ -108,6 +108,7 @@ $image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
 	<form class="form-inline float-md-right" action="/" method="get">
 		<input class="form-control" name="s" id="s" type="text" placeholder="Search" value="<?php the_search_query(); ?>">
 	</form>
+	</div>
 
 </nav>
 <div id="hereditaryfoo"><?php echo get_theme_mod("hereditary_foo"); ?></div>
