@@ -6,7 +6,7 @@
 	<div class="col-md-5 offset-md-2">
 		<?php while ( have_posts() ) : the_post(); ?>
 
-		<div class="<?php post_class() ?>">
+		<div <?php post_class() ?>>
 			<date><?php the_date() ?></date>
 			<h1><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h1>
 <?php 
