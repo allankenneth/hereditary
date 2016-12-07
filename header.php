@@ -1,6 +1,7 @@
 <?php // Setup customizer variables
 $headercolor = get_theme_mod("hereditary_header_color");
 $linkcolor = get_theme_mod("hereditary_links");
+$searchbg = get_theme_mod("hereditary_searchbg");
 $hovercolor = get_theme_mod("hereditary_links_hover");
 $navlight = get_theme_mod("hereditary_nav_highlight");
 $navpos = get_theme_mod("hereditary_navpos");
@@ -104,7 +105,7 @@ color: <?php echo $hovercolor ?>;
 	) ?>
 	</ul>
 	<form class="form-inline float-md-right" action="/" method="get">
-		<input class="form-control" name="s" id="s" type="text" placeholder="Search" value="<?php the_search_query(); ?>">
+		<input style="background: <?php echo $searchbg ?>" class="form-control" name="s" id="s" type="text" placeholder="Search" value="<?php the_search_query(); ?>">
 	</form>
 	</div>
 

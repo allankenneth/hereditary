@@ -125,6 +125,10 @@ function hereditary_customize_register($wp_customize)
 		"default" => "",
 		"transport" => "postMessage",
 	));
+	$wp_customize->add_setting("hereditary_searchbg", array(
+		"default" => "",
+		"transport" => "postMessage",
+	));
 	$wp_customize->add_control(new WP_Customize_Control(
 		$wp_customize,
 		"hereditary_navpos",
@@ -140,6 +144,24 @@ function hereditary_customize_register($wp_customize)
 		),
 		)
 	));
+    $wp_customize->add_control(
+        new Customize_Alpha_Color_Control(
+            $wp_customize,
+            'hereditary_searchbg',
+            array(
+                'label'         => __( 'Search field background color', 'customizer_hereditary_searchbg_label' ),
+                'section'       => 'colors',
+                'settings'      => 'hereditary_searchbg',
+                'show_opacity'  => true, // Optional.
+                'palette'   => array(
+                    'rgb(150, 50, 220)', // RGB, RGBa, and hex values supported
+                    'rgba(50,50,50,0.8)',
+                    'rgba( 255, 255, 255, 0.2 )', // Different spacing = no problem
+                    '#00CC99' // Mix of color types = no problem
+                )
+            )
+        )
+    );
 	$wp_customize->add_control(new WP_Customize_Control(
 		$wp_customize,
 		"hereditary_navbar",
