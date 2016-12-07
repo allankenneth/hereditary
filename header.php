@@ -67,12 +67,7 @@ color: <?php echo $hovercolor ?>;
 .post h1 a {
 	color: <?php echo $postlinks ?>;
 }
-.custom-background {
-	-webkit-background-size: cover !important;
-	-moz-background-size: cover !important;
-	-o-background-size: cover !important;
-	background-size: cover !important;
-}
+
 </style>
 </head>
 <body <?php body_class(); ?>>
