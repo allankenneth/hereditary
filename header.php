@@ -1,4 +1,5 @@
 <?php // Setup customizer variables
+$mainpadding = get_theme_mod("hereditary_maincontent_padding");
 $headercolor = get_theme_mod("hereditary_header_color");
 $linkcolor = get_theme_mod("hereditary_links");
 $searchbg = get_theme_mod("hereditary_searchbg");
@@ -68,7 +69,9 @@ color: <?php echo $hovercolor ?>;
 .post h1 a {
 	color: <?php echo $postlinks ?>;
 }
-
+.maincontentbg {
+	padding: <?php echo $mainpadding ?>;
+}
 </style>
 </head>
 <body <?php body_class(); ?>>

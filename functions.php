@@ -129,6 +129,11 @@ function hereditary_customize_register($wp_customize)
 		"default" => "",
 		"transport" => "postMessage",
 	));
+	$wp_customize->add_setting("hereditary_maincontent_padding", array(
+		"default" => "",
+		"transport" => "postMessage",
+	));
+
 	$wp_customize->add_control(new WP_Customize_Control(
 		$wp_customize,
 		"hereditary_navpos",
@@ -144,6 +149,17 @@ function hereditary_customize_register($wp_customize)
 		),
 		)
 	));
+	$wp_customize->add_control(new WP_Customize_Control(
+		$wp_customize,
+		"hereditary_maincontent_padding",
+		array(
+			"label" => __("Main content padding", "customizer_hereditary_maincontent_padding_label"),
+			"section" => "hereditary",
+			"settings" => "hereditary_maincontent_padding",
+			'type'     => 'text',
+		)
+	));
+	
     $wp_customize->add_control(
         new Customize_Alpha_Color_Control(
             $wp_customize,
