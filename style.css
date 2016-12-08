@@ -40,13 +40,12 @@ h3 {
 	font-weight: bold;
 }
 
-
+.maincontentbg {
+	border-radius: 4px;
+	padding: 20px;
+}
 .list-group .children {
 	display: none;
-}
-
-.maincontentbg {
-	padding: 15px;
 }
 
 /* TODO figure out why I need to do the following

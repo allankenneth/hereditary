@@ -166,13 +166,13 @@ function hereditary_customize_register($wp_customize)
 		$wp_customize,
 		"hereditary_navbar",
 		array(
-			"label" => __("Navbar Text Color", "customizer_hereditary_navbar_label"),
+			"label" => __("Navbar Base Color", "customizer_hereditary_navbar_label"),
 			"section" => "colors",
 			"settings" => "hereditary_navbar",
 			'type'     => 'radio',
 			'choices'  => array(
-				'navbar-light'  => 'Dark text',
-				'navbar-dark' => 'White text',
+				'navbar-light'  => 'Dark',
+				'navbar-dark' => 'White',
 		),
 		)
 	));
