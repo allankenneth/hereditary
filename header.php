@@ -86,7 +86,7 @@ color: <?php echo $hovercolor ?>;
 		<?php endif ?>
 		<?php bloginfo( 'name' ) ?>
 	</a>
-	<button class="float-md-right hidden-sm-up navbar-toggler" 
+	<button class="float-md-right hidden-lg-up navbar-toggler" 
 		type="button" 
 		data-toggle="collapse" 
 		data-target="#hereditary-collapse" 

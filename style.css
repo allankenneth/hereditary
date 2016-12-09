@@ -36,6 +36,9 @@ h3 {
 .container {
 	margin: 30px auto;
 }
+.navbar-dark .dropdown-menu {
+	background-color: rgba(0,0,0,.8);
+}
 .current-cat {
 	font-weight: bold;
 }
