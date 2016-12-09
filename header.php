@@ -44,25 +44,32 @@ body, html { padding-top: 30px; }
 <?php endif; ?>
 .maincontentbg a:not(.btn),
 .breadcrumb a,
-.list-group-item a {
+.nav-item a {
 	color: <?php echo $linkcolor ?>;
 }
 .maincontentbg a:not(.btn):hover,
 .breadcrumb a:hover,
-.list-group-item a:hover {
-color: <?php echo $hovercolor ?>;
+.nav-item a:hover {
+	color: <?php echo $hovercolor ?>;
 }
+
+#sectionNav .nav,
 .custom-background .list-group-item,
 .custom-background .breadcrumb {
 	background-color: <?php echo $mainbgcolor; ?>;
 	border: 0;
 }
-.custom-background .list-group-item-warning {
+#sectionNav .nav {
+	border-radius: 4px;
+}
+#sectionNav .active {
 	background-color: <?php echo $navlight; ?>;
+	border-radius: 4px;
 }
 .breadcrumb {
 
 }
+
 .pagetitle {
 	color: <?php echo $headercolor ?>;
 }

@@ -74,7 +74,7 @@
   </button>
 <div class="collapse navbar-toggleable-xs" id="sectionNav">
 
-         <ul class="list-group">
+         <ul class="nav nav-pills nav-stacked">
          <?php wp_list_pages($args);  ?>
          </ul>
 </div>
