@@ -1,4 +1,5 @@
 <?php // Setup customizer variables
+$url = home_url();
 $mainpadding = get_theme_mod("hereditary_maincontent_padding");
 $headercolor = get_theme_mod("hereditary_header_color");
 $linkcolor = get_theme_mod("hereditary_links");
@@ -9,13 +10,13 @@ $navpos = get_theme_mod("hereditary_navpos");
 $mainbgcolor = get_theme_mod("hereditary_contentbg");
 $postlinks = get_theme_mod("hereditary_postlinks");
 $navbar_base = get_theme_mod("hereditary_navbar");
-$url = home_url();
 $navbar_color = get_theme_mod("hereditary_navbar_color");
 $footerwidget = get_theme_mod("hereditary_footerwidget");
+$footerwidget_title = get_theme_mod("hereditary_footerwidget_title");
 $custom_logo_id = get_theme_mod( 'custom_logo' );
 $image = wp_get_attachment_image_src( $custom_logo_id , 'full' ); ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -53,7 +54,7 @@ body, html { padding-top: 30px; }
 .nav-item a:hover {
 	color: <?php echo $hovercolor ?>;
 }
-
+.post-edit-link,
 #sectionNav .nav,
 .custom-background .list-group-item,
 .custom-background .breadcrumb {
@@ -70,7 +71,6 @@ body, html { padding-top: 30px; }
 .breadcrumb {
 
 }
-
 .pagetitle {
 	color: <?php echo $headercolor ?>;
 }
@@ -78,15 +78,19 @@ body, html { padding-top: 30px; }
 	color: <?php echo $postlinks ?>;
 }
 .maincontentbg {
+	background-color: <?php echo $mainbgcolor ?>;
 	padding: <?php echo $mainpadding ?>;
 }
 .card {
 	background-color: <?php echo $footerwidget ?>;
 }
+.card h1 {
+	color: <?php echo $footerwidget_title ?>;
+	font-weight: 200;
+}
 </style>
 </head>
 <body <?php body_class(); ?>>
-
 <nav class="navbar navbar-full <?php echo $navpos ?> <?php echo $navbar_base ?>" style="background-color: <?php echo $navbar_color ?>">
 	<a class="navbar-brand" href="<?php echo esc_url( $url ) ?>">
 		<?php if($custom_logo_id): ?>
@@ -101,27 +105,30 @@ body, html { padding-top: 30px; }
 		type="button" 
 		data-toggle="collapse" 
 		data-target="#hereditary-collapse" 
-		aria-controls="bsref-collapse" aria-expanded="false" aria-label="Toggle navigation">
+		aria-controls="hereditary-collapse" aria-expanded="false" aria-label="Toggle navigation">
 	</button>
-
 	<div class="collapse navbar-toggleable-md" id="hereditary-collapse">
-	<ul class="float-md-left nav navbar-nav">
 	<?php wp_nav_menu( array(
 		'menu'              => 'primary',
 		'theme_location'    => 'primary',
 		'depth'             => 2,
-		'container'         => 'div',
-		'container_class'   => 'collapse in navbar-collapse',
-		'container_id'      => 'hereditary-collapse',
+		'container'         => '',
+		'container_class'   => 'nav navbar-nav',
+		'container_id'      => '',
 		'menu_class'        => 'nav navbar-nav',
 		'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
 		'walker'            => new wp_bootstrap_navwalker())
 	) ?>
-	</ul>
 	<form class="form-inline float-md-right" action="/" method="get">
-		<input style="background: <?php echo $searchbg ?>" class="form-control" name="s" id="s" type="text" placeholder="Search" value="<?php the_search_query(); ?>">
+		<input style="background: <?php echo $searchbg ?>" 
+			class="form-control" 
+			name="s" 
+			id="s" 
+			type="text" 
+			placeholder="Search" 
+			value="<?php the_search_query(); ?>">
 	</form>
 	</div>
 
 </nav>
-<div id="hereditaryfoo"><?php echo get_theme_mod("hereditary_foo"); ?></div>
+

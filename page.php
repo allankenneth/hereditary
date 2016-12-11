@@ -84,12 +84,11 @@
 		<div class="featured-image">
 			<?php the_post_thumbnail() ?>
 		</div>
-		<div class="<?php echo $mainbgtxtclass ?>" style="background: <?php echo $mainbgcolor ?>;">
+		<div class="<?php echo $mainbgtxtclass ?> maincontentbg">
 		<?php the_content() ?>
 		</div>
 		<div><?php edit_post_link( __( 'Edit' )); ?></div>
 	</div>
-</div>
 </div>
 </div>
 

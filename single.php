@@ -23,7 +23,7 @@
 			</div>
 			<date><?php the_date() ?></date>
 			<h1><?php the_title() ?></h1>
-			<div class="content">
+			<div class="maincontentbg">
 				<?php the_content() ?>
 			</div>
 			<div class="editlink">
