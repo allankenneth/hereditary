@@ -9,8 +9,9 @@ $navpos = get_theme_mod("hereditary_navpos");
 $mainbgcolor = get_theme_mod("hereditary_contentbg");
 $postlinks = get_theme_mod("hereditary_postlinks");
 $navbar_base = get_theme_mod("hereditary_navbar");
-$navbar_color = get_theme_mod("hereditary_navbar_color");
 $url = home_url();
+$navbar_color = get_theme_mod("hereditary_navbar_color");
+$footerwidget = get_theme_mod("hereditary_footerwidget");
 $custom_logo_id = get_theme_mod( 'custom_logo' );
 $image = wp_get_attachment_image_src( $custom_logo_id , 'full' ); ?>
 <!DOCTYPE html>
@@ -78,6 +79,9 @@ body, html { padding-top: 30px; }
 }
 .maincontentbg {
 	padding: <?php echo $mainpadding ?>;
+}
+.card {
+	background-color: <?php echo $footerwidget ?>;
 }
 </style>
 </head>

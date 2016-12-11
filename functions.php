@@ -31,9 +31,9 @@ function hereditary_widgets_init() {
         register_sidebar( array(
                 'name'          => 'Footer',
                 'id'            => 'footer',
-                'before_widget' => '<div class="col-md-4">',
-                'after_widget'  => '</div>',
-                'before_title'  => '<h1>',
+                'before_widget' => '<div class="card"><div class="card-block">',
+                'after_widget'  => '</div></div>',
+                'before_title'  => '<h1 class="card-title">',
                 'after_title'   => '</h1>',
         ) );
 
@@ -133,7 +133,10 @@ function hereditary_customize_register($wp_customize)
 		"default" => "",
 		"transport" => "postMessage",
 	));
-
+	$wp_customize->add_setting("hereditary_footerwidget", array(
+		"default" => "",
+		"transport" => "postMessage",
+	));
 	$wp_customize->add_control(new WP_Customize_Control(
 		$wp_customize,
 		"hereditary_navpos",
@@ -149,6 +152,16 @@ function hereditary_customize_register($wp_customize)
 		),
 		)
 	));
+    $wp_customize->add_control(new WP_Customize_Control(
+        $wp_customize,
+        "hereditary_excludepage",
+        array(  
+            "label" => __("Exclude pages from menu", "customizer_hereditary_excludepage_label"),
+            "section" => "hereditary",
+            "settings" => "hereditary_excludepages",
+            "type"     => "text",
+                )
+    ));
 	$wp_customize->add_control(new WP_Customize_Control(
 		$wp_customize,
 		"hereditary_maincontent_padding",
@@ -355,17 +368,25 @@ function hereditary_customize_register($wp_customize)
         )
     );
 
-    $wp_customize->add_control(new WP_Customize_Control(
-        $wp_customize,
-        "hereditary_excludepage",
-        array(  
-            "label" => __("Exclude pages from menu", "customizer_hereditary_excludepage_label"),
-            "section" => "hereditary",
-            "settings" => "hereditary_excludepages",
-            "type"     => "text",
-                )
-    ));
 
+    $wp_customize->add_control(
+        new Customize_Alpha_Color_Control(
+            $wp_customize,
+            'hereditary_footerwidget',
+            array(
+                'label'         => __( 'Footer widget background Color', 'customizer_hereditary_footerwidget_label' ),
+                'section'       => 'colors',
+                'settings'      => 'hereditary_footerwidget',
+                'show_opacity'  => true, // Optional.
+                'palette'   => array(
+                    'rgb(150, 50, 220)', // RGB, RGBa, and hex values supported
+                    'rgba(50,50,50,0.8)',
+                    'rgba( 255, 255, 255, 0.2 )', // Different spacing = no problem
+                    '#00CC99' // Mix of color types = no problem
+                )
+            )
+        )
+    );
 }
 
 add_action("customize_register","hereditary_customize_register");
