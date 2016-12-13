@@ -49,7 +49,25 @@ h3 {
 .list-group .children {
 	display: none;
 }
-
+.post:first-child {
+	margin: 0;
+}
+.post {
+	margin: 40px 0;
+}
+.featuredimage {
+	display: block;
+}
+.featuredimage img {
+	display: block;
+	margin: 0 auto;
+}
+.post-edit-link {
+	display: block;
+	margin: 10px auto;
+	padding: 5px;
+	text-align: center;
+}
 /* TODO figure out why I need to do the following
 .navbar-nav .nav-item+.nav-item is set in bootstrap which makes
 the first item in the nav menu with no left margin...
