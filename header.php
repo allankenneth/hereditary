@@ -54,6 +54,7 @@ body, html { padding-top: 30px; }
 .nav-item a:hover {
 	color: <?php echo $hovercolor ?>;
 }
+.section-menu,
 .post-edit-link,
 #sectionNav .nav,
 .custom-background .list-group-item,

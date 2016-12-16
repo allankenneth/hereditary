@@ -69,7 +69,7 @@
     // and if it has children
     if(count($siblings) > 1 && !is_null($args)): ?>
 	<div class="col-md-4">
-  <button class="btn-section btn btn-sm btn-block btn-secondary hidden-sm-up" type="button" data-toggle="collapse" data-target="#sectionNav">
+  <button class="btn btn-sm btn-block hidden-sm-up section-menu" type="button" data-toggle="collapse" data-target="#sectionNav">
     &#9776; Sections
   </button>
 <div class="collapse navbar-toggleable-xs" id="sectionNav">

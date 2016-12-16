@@ -49,6 +49,10 @@ h3 {
 .list-group .children {
 	display: none;
 }
+#sectionNav,
+.section-menu {
+	margin: 0 0 10px 0;
+}
 .post:first-child {
 	margin: 0;
 }
