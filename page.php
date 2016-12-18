@@ -88,6 +88,11 @@
 		<?php the_content() ?>
 		</div>
 		<div><?php edit_post_link( __( 'Edit' )); ?></div>
+		<div class="card">
+			<div class="card-block">
+			<?php comments_template(); ?>
+			</div>
+		</div>
 	</div>
 </div>
 </div>

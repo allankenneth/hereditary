@@ -16,6 +16,9 @@ get_header() ?>
 		</div>
 
 		<?php endwhile; ?>
+<?php the_posts_pagination( array( 'mid_size' => 2,
+    'prev_text' => __( 'Back', 'textdomain' ),
+    'next_text' => __( 'Onward', 'textdomain' ) ) ); ?>
 	</div>
 	<div class="col-md-3">
 	<?php if ( is_active_sidebar( 'sidebar' ) ) : ?>

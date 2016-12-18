@@ -39,6 +39,12 @@
 				<?php edit_post_link( __( 'Edit' )); ?>
 				</div>
 			</div>
+			<div class="card">
+				<div class="card-block">
+			<?php comments_template(); ?> 
+				</div>
+			</div>
+
 		</div>
 
 <?php endwhile; ?>
