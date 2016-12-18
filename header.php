@@ -46,11 +46,13 @@ body, html { padding-top: 30px; }
 <?php endif; ?>
 .maincontentbg a:not(.btn),
 .breadcrumb a,
+.card a,
 .nav-item a {
 	color: <?php echo $linkcolor ?>;
 }
 .maincontentbg a:not(.btn):hover,
 .breadcrumb a:hover,
+.card a:hover,
 .nav-item a:hover {
 	color: <?php echo $hovercolor ?>;
 }
@@ -84,9 +86,9 @@ body, html { padding-top: 30px; }
 }
 .card {
 	background-color: <?php echo $footerwidget ?>;
+	color: <?php echo $footerwidget_title ?>;
 }
 .card h1 {
-	color: <?php echo $footerwidget_title ?>;
 	font-weight: 200;
 }
 </style>
