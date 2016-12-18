@@ -45,6 +45,7 @@ h3 {
 
 .maincontentbg {
 	border-radius: 4px;
+	margin-bottom: 30px;
 }
 .list-group .children {
 	display: none;

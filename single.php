@@ -17,22 +17,32 @@
 		</ol>
 	</div>
 
-		<div class="col-md-6 offset-md-1">
+		<div class="col-md-9">
+			<date><?php the_date() ?></date>
+			<h1><?php the_title() ?></h1>
+
 			<div class="featured-image">
 				<?php the_post_thumbnail() ?>
 			</div>
-			<date><?php the_date() ?></date>
-			<h1><?php the_title() ?></h1>
 			<div class="maincontentbg">
 				<?php the_content() ?>
 			</div>
-			<div class="editlink">
-					<?php edit_post_link( __( 'Edit' )); ?>
+			<div class="card">
+				<div class="card-block">
+				<p>This entry was posted on 
+				<?php the_time('l, F jS, Y') ?> at 
+				<?php the_time() ?> and is filed 
+				under <?php the_category(', ') ?>.</p>
+				<p>
+				<?php the_tags() ?>
+				</p>
+				<?php edit_post_link( __( 'Edit' )); ?>
+				</div>
 			</div>
 		</div>
 
 <?php endwhile; ?>
-	<div class="col-md-4">
+	<div class="col-md-3">
 	<?php if ( is_active_sidebar( 'sidebar' ) ) : ?>
 		<?php dynamic_sidebar( 'sidebar' ); ?>
 	<?php endif; ?>
