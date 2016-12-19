@@ -47,18 +47,24 @@ body, html { padding-top: 30px; }
 .maincontentbg a:not(.btn),
 .breadcrumb a,
 .card a,
+.page-link,
 .nav-item a {
 	color: <?php echo $linkcolor ?>;
 }
 .maincontentbg a:not(.btn):hover,
 .breadcrumb a:hover,
 .card a:hover,
+.page-link:hover,
 .nav-item a:hover {
 	color: <?php echo $hovercolor ?>;
+}
+.page-link:hover {
+	background: <?php echo $navlight; ?>;
 }
 .section-menu,
 .post-edit-link,
 #sectionNav .nav,
+.page-link,
 .custom-background .list-group-item,
 .custom-background .breadcrumb {
 	background-color: <?php echo $mainbgcolor; ?>;
@@ -70,9 +76,6 @@ body, html { padding-top: 30px; }
 #sectionNav .active {
 	background-color: <?php echo $navlight; ?>;
 	border-radius: 4px;
-}
-.breadcrumb {
-
 }
 .pagetitle {
 	color: <?php echo $headercolor ?>;

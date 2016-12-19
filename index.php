@@ -16,9 +16,14 @@ get_header() ?>
 		</div>
 
 		<?php endwhile; ?>
-<?php the_posts_pagination( array( 'mid_size' => 2,
-    'prev_text' => __( 'Back', 'textdomain' ),
-    'next_text' => __( 'Onward', 'textdomain' ) ) ); ?>
+<ul class="pagination">
+<?php 
+$pages = paginate_links( array('type' => 'array'));
+foreach($pages as $page):
+	echo '<li class="page-item">' . str_replace('page-numbers','page-link',$page) . '</li>';
+endforeach;
+?>
+</ul>
 	</div>
 	<div class="col-md-3">
 	<?php if ( is_active_sidebar( 'sidebar' ) ) : ?>

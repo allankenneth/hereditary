@@ -39,11 +39,13 @@
 				<?php edit_post_link( __( 'Edit' )); ?>
 				</div>
 			</div>
+			<?php if(comments_open()): ?>
 			<div class="card">
 				<div class="card-block">
 			<?php comments_template(); ?> 
 				</div>
 			</div>
+			<?php endif; ?>
 
 		</div>
 
