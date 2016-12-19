@@ -1,3 +1,6 @@
+<?php 
+    $mainbgtxtclass = get_theme_mod("hereditary_content_text");
+?>
 <?php get_header() ?>
 
 <?php while ( have_posts() ) : the_post(); ?>
@@ -18,13 +21,13 @@
 	</div>
 
 		<div class="col-md-9">
-			<date><?php the_date() ?></date>
-			<h1><?php the_title() ?></h1>
+			<date class="pagetitle"><?php the_date() ?></date>
+			<h1 class="pagetitle"><?php the_title() ?></h1>
 
 			<div class="featured-image">
 				<?php the_post_thumbnail() ?>
 			</div>
-			<div class="maincontentbg">
+			<div class="<?php echo $mainbgtxtclass ?> maincontentbg">
 				<?php the_content() ?>
 			</div>
 			<div class="card">

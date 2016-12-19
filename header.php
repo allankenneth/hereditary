@@ -1,7 +1,7 @@
 <?php // Setup customizer variables
 $url = home_url();
 $mainpadding = get_theme_mod("hereditary_maincontent_padding");
-$headercolor = get_theme_mod("hereditary_header_color");
+$pageheader = get_theme_mod("hereditary_pageheader");
 $linkcolor = get_theme_mod("hereditary_links");
 $searchbg = get_theme_mod("hereditary_searchbg");
 $hovercolor = get_theme_mod("hereditary_links_hover");
@@ -70,6 +70,7 @@ body, html { padding-top: 30px; }
 	background-color: <?php echo $mainbgcolor; ?>;
 	border: 0;
 }
+
 #sectionNav .nav {
 	border-radius: 4px;
 }
@@ -78,7 +79,7 @@ body, html { padding-top: 30px; }
 	border-radius: 4px;
 }
 .pagetitle {
-	color: <?php echo $headercolor ?>;
+	color: <?php echo $pageheader ?>;
 }
 .post h1 a {
 	color: <?php echo $postlinks ?>;
