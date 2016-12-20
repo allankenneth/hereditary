@@ -2,6 +2,7 @@
 $url = home_url();
 $mainpadding = get_theme_mod("hereditary_maincontent_padding");
 $pageheader = get_theme_mod("hereditary_pageheader");
+$btnsuccess = get_theme_mod("hereditary_btn-success");
 $linkcolor = get_theme_mod("hereditary_links");
 $searchbg = get_theme_mod("hereditary_searchbg");
 $hovercolor = get_theme_mod("hereditary_links_hover");
@@ -73,7 +74,6 @@ input, textarea,
 	background-color: <?php echo $mainbgcolor ?>;
 	border: 0;
 }
-
 #sectionNav .nav {
 	border-radius: 4px;
 }
@@ -98,10 +98,16 @@ input, textarea,
 .card h1 {
 	font-weight: 200;
 }
+.btn-success,
+.btn-success:hover {
+	background-color: <?php echo $btnsuccess ?>;
+	border-color: <?php echo $btnsuccess ?>;
+}
 </style>
 </head>
 <body <?php body_class(); ?>>
-<nav class="navbar navbar-full <?php echo $navpos ?> <?php echo $navbar_base ?>" style="background-color: <?php echo $navbar_color ?>">
+<nav class="navbar navbar-full <?php echo $navpos ?> <?php echo $navbar_base ?>" 
+	style="background-color: <?php echo $navbar_color ?>">
 	<a class="navbar-brand" href="<?php echo esc_url( $url ) ?>">
 		<?php if($custom_logo_id): ?>
 		<img class="d-inline-block align-top logo" 
