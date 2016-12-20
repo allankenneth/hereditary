@@ -18,7 +18,7 @@ $image = wp_get_attachment_image_src( $custom_logo_id , 'full' ); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="<?php bloginfo( 'charset' ); ?>">
+<meta charset="<?php bloginfo( 'charset' ) ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title><?php
 	// Returns the title based on the type of page being viewed
@@ -38,7 +38,7 @@ $image = wp_get_attachment_image_src( $custom_logo_id , 'full' ); ?>
 ?></title>
 <meta name="description" content="<?php bloginfo( 'description' ) ?>">
 <link rel="profile" href="http://gmpg.org/xfn/11" />
-<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>">
+<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ) ?>">
 <?php wp_head(); ?>
 <style>
 <?php if($navpos): ?>
@@ -48,6 +48,7 @@ body, html { padding-top: 30px; }
 .breadcrumb a,
 .card a,
 .page-link,
+.list-group-item a,
 .nav-item a {
 	color: <?php echo $linkcolor ?>;
 }
@@ -55,19 +56,21 @@ body, html { padding-top: 30px; }
 .breadcrumb a:hover,
 .card a:hover,
 .page-link:hover,
+.list-group-item a:hover,
 .nav-item a:hover {
 	color: <?php echo $hovercolor ?>;
 }
 .page-link:hover {
-	background: <?php echo $navlight; ?>;
+	background: <?php echo $navlight ?>;
 }
 .section-menu,
 .post-edit-link,
 #sectionNav .nav,
 .page-link,
+input, textarea,
 .custom-background .list-group-item,
 .custom-background .breadcrumb {
-	background-color: <?php echo $mainbgcolor; ?>;
+	background-color: <?php echo $mainbgcolor ?>;
 	border: 0;
 }
 
@@ -75,7 +78,7 @@ body, html { padding-top: 30px; }
 	border-radius: 4px;
 }
 #sectionNav .active {
-	background-color: <?php echo $navlight; ?>;
+	background-color: <?php echo $navlight ?>;
 	border-radius: 4px;
 }
 .pagetitle {
@@ -133,7 +136,7 @@ body, html { padding-top: 30px; }
 			id="s" 
 			type="text" 
 			placeholder="Search" 
-			value="<?php the_search_query(); ?>">
+			value="<?php the_search_query() ?>">
 	</form>
 	</div>
 
