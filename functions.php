@@ -145,6 +145,11 @@ function hereditary_customize_register($wp_customize)
 		"default" => "",
 		"transport" => "postMessage",
 	));
+	$wp_customize->add_setting("hereditary_hero", array(
+		"default" => "",
+		"transport" => "postMessage",
+	));
+
 	$wp_customize->add_control(new WP_Customize_Control(
 		$wp_customize,
 		"hereditary_navpos",
@@ -160,6 +165,16 @@ function hereditary_customize_register($wp_customize)
 		),
 		)
 	));
+    $wp_customize->add_control(new WP_Customize_Control(
+        $wp_customize,
+        "hereditary_hero",
+        array(  
+            "label" => __("Home Page Hero Message", "customizer_hereditary_hero_label"),
+            "section" => "hereditary",
+            "settings" => "hereditary_hero",
+            "type"     => "textarea",
+                )
+    ));
     $wp_customize->add_control(new WP_Customize_Control(
         $wp_customize,
         "hereditary_excludepage",

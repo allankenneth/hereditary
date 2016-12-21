@@ -64,6 +64,7 @@ body, html { padding-top: 30px; }
 .page-link:hover {
 	background: <?php echo $navlight ?>;
 }
+.jumbotron,
 .section-menu,
 .post-edit-link,
 #sectionNav .nav,
