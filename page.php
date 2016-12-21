@@ -31,7 +31,7 @@
 	</div>
 	</div>
 	<div class="col-md-8 offset-md-2">
-		<h1 class="pagetitle"><?php the_title() ?></h1>
+		<h1 class="display-3 pagetitle"><?php the_title() ?></h1>
 
 	</div>
 	<div class="col-md-8 offset-md-2">
