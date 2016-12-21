@@ -64,7 +64,6 @@ body, html { padding-top: 30px; }
 .page-link:hover {
 	background: <?php echo $navlight ?>;
 }
-.jumbotron,
 .section-menu,
 .post-edit-link,
 #sectionNav .nav,
@@ -92,6 +91,7 @@ input, textarea,
 	background-color: <?php echo $mainbgcolor ?>;
 	padding: <?php echo $mainpadding ?>;
 }
+.jumbotron,
 .card {
 	background-color: <?php echo $footerwidget ?>;
 	color: <?php echo $footerwidget_title ?>;

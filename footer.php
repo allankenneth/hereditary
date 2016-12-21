@@ -1,5 +1,5 @@
 
-<div class="container">
+<div id="footer" class="container">
 	<div class="row">
 	<div class="card-deck-wrapper">
 		<div class="card-deck">

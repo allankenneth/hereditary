@@ -1,27 +1,24 @@
 <?php get_header() ?>
 <?php while ( have_posts() ) : the_post(); ?>
 
-<div class="container">
 
 <?php $hero = get_theme_mod("hereditary_hero") ?>
 <?php if($hero): ?>
-	<div class="row">
-	<div class="col-md-12">
-	<div class="jumbotron">
+	<div class="jumbotron jumbotron-fluid">
+	<div class="container">
 	<?php echo $hero ?>
 	</div>
 	</div>
-	</div>
 <?php endif ?>
+
+<div class="container">
 	<?php $video = get_post_meta($post->ID, 'Video', true); ?>
 	<?php if($video): ?>
 		<?php echo hereditary_video_embed($video); ?>
 	<?php endif; ?>
-	</div>
-	</div>
+	<div class="row">
 	<div class="col-md-8 offset-md-2">
-		<h1 class="pagetitle"><?php the_title() ?></h1>
-
+		<h1 class="display-4 pagetitle"><?php the_title() ?></h1>
 	</div>
 	<div class="col-md-8 offset-md-2">
 	<div class="row">
@@ -63,7 +60,7 @@
          <ul class="nav nav-pills nav-stacked">
          <?php wp_list_pages($args);  ?>
          </ul>
-</div>
+	</div>
 	</div>
     <?php endif; ?>
 	<div class="col-md-8">

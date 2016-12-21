@@ -20,6 +20,7 @@ body a:hover {
 }
 
 img {
+	border-radius: 3px;
 	height: auto;
 	max-width: 100%;
 }
@@ -97,7 +98,14 @@ the first item in the nav menu with no left margin...
 @media (min-width: 48em) { }
 
 /* Large devices (desktops, 62em and up)*/
-@media (min-width: 62em) { }
+@media (min-width: 62em) { 
+
+#footer {
+	clear: both;
+	margin-top: 60px;
+}
+
+}
 
 /* Extra large devices (large desktops, 75em and up)*/
 @media (min-width: 75em) { }
