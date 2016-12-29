@@ -32,7 +32,6 @@
 	</div>
 	<div class="col-md-8 offset-md-2">
 		<h1 class="display-3 pagetitle"><?php the_title() ?></h1>
-
 	</div>
 	<div class="col-md-8 offset-md-2">
 	<div class="row">
@@ -81,8 +80,12 @@
 		<div class="featured-image">
 			<?php the_post_thumbnail() ?>
 		</div>
+
 		<div class="<?php echo $mainbgtxtclass ?> maincontentbg">
 		<?php the_content() ?>
+		<div class="postedon">
+			<p>Created: <?php the_time('l, F jS, Y') ?> by: <?php the_author_posts_link(); ?></p>
+		</div>
 		</div>
 		<div><?php edit_post_link( __( 'Edit' )); ?></div>
 		<?php if(comments_open()): ?>

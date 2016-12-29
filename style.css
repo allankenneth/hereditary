@@ -64,6 +64,9 @@ h3 {
 .section-menu {
 	margin: 0 0 10px 0;
 }
+.postedon {
+	font-size: 10px;
+}
 .post:first-child {
 	margin: 0;
 }

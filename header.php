@@ -43,7 +43,7 @@ $image = wp_get_attachment_image_src( $custom_logo_id , 'full' ); ?>
 <?php wp_head(); ?>
 <style>
 <?php if($navpos): ?>
-body, html { padding-top: 30px; }
+body, html { padding-top: 27px; }
 <?php endif; ?>
 .maincontentbg a:not(.btn),
 .breadcrumb a,
