@@ -85,6 +85,9 @@
 		<?php the_content() ?>
 		<div class="postedon">
 			<p>Created: <?php the_time('l, F jS, Y') ?> by: <?php the_author_posts_link(); ?></p>
+<div id="users">
+   <?php wp_dropdown_users(array('name' => 'author', 'echo' => 0)); ?>
+</div>
 		</div>
 		</div>
 		<div><?php edit_post_link( __( 'Edit' )); ?></div>

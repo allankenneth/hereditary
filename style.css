@@ -86,13 +86,7 @@ h3 {
 	padding: 5px;
 	text-align: center;
 }
-/* TODO figure out why I need to do the following
-.navbar-nav .nav-item+.nav-item is set in bootstrap which makes
-the first item in the nav menu with no left margin...
-*/
-.navbar-nav .nav-item {
-	margin-left: 1rem;
-}
+
 
 /* Small devices (landscape phones, 34em and up)*/
 @media (min-width: 34em) { }
