@@ -74,6 +74,10 @@
          <?php wp_list_pages($args);  ?>
          </ul>
 </div>
+		<?php if ( is_active_sidebar( 'page-sidebar' ) ) : ?>
+		<?php dynamic_sidebar( 'page-sidebar' ); ?>
+		<?php endif; ?>
+
 	</div>
     <?php endif; ?>
 	<div class="col-md-8">

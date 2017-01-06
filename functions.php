@@ -19,7 +19,6 @@ add_theme_support( 'custom-logo');
  *
  */
 function hereditary_widgets_init() {
-
         register_sidebar( array(
                 'name'          => 'Sidebar',
                 'id'            => 'sidebar',
@@ -27,6 +26,15 @@ function hereditary_widgets_init() {
                 'after_widget'  => '',
                 'before_title'  => '<h1>',
                 'after_title'   => '</h1>',
+        ) );
+
+        register_sidebar( array(
+                'name'          => 'Page Sidebar',
+                'id'            => 'page-sidebar',
+                'before_widget' => '',
+                'after_widget'  => '',
+                'before_title'  => '<h2>',
+                'after_title'   => '</h2>',
         ) );
         register_sidebar( array(
                 'name'          => 'Footer',
