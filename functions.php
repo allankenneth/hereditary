@@ -87,7 +87,10 @@ function hereditary_customize_register($wp_customize)
 		"default" => "",
 		"transport" => "postMessage",
 	));
-
+	$wp_customize->add_setting("hereditary_search", array(
+		"default" => "",
+		"transport" => "postMessage",
+	));
 	$wp_customize->add_setting("hereditary_links", array(
 		"default" => "",
 		"transport" => "postMessage",
@@ -157,7 +160,16 @@ function hereditary_customize_register($wp_customize)
 		"default" => "",
 		"transport" => "postMessage",
 	));
-
+    $wp_customize->add_control(new WP_Customize_Control(
+        $wp_customize,
+        "hereditary_search",
+        array(  
+            "label" => __("Display a search box", "customizer_hereditary_search_label"),
+            "section" => "hereditary",
+            "settings" => "hereditary_search",
+            "type"     => "checkbox",
+                )
+    ));
 	$wp_customize->add_control(new WP_Customize_Control(
 		$wp_customize,
 		"hereditary_navpos",

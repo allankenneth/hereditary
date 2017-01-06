@@ -1,6 +1,7 @@
 <?php // Setup customizer variables
 $url = home_url();
 $mainpadding = get_theme_mod("hereditary_maincontent_padding");
+$searchenable = get_theme_mod("hereditary_search");
 $pageheader = get_theme_mod("hereditary_pageheader");
 $btnsuccess = get_theme_mod("hereditary_btn-success");
 $linkcolor = get_theme_mod("hereditary_links");
@@ -136,6 +137,7 @@ input, textarea,
 		'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
 		'walker'            => new wp_bootstrap_navwalker())
 	) ?>
+	<?php if($searchenable): ?>
 	<form class="form-inline float-md-right" action="/" method="get">
 		<input style="background: <?php echo $searchbg ?>" 
 			class="form-control" 
@@ -145,6 +147,7 @@ input, textarea,
 			placeholder="Search" 
 			value="<?php the_search_query() ?>">
 	</form>
+	<?php endif; ?>
 	</div>
 
 </nav>
