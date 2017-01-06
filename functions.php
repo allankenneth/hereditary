@@ -160,16 +160,11 @@ function hereditary_customize_register($wp_customize)
 		"default" => "",
 		"transport" => "postMessage",
 	));
-    $wp_customize->add_control(new WP_Customize_Control(
-        $wp_customize,
-        "hereditary_search",
-        array(  
-            "label" => __("Display a search box", "customizer_hereditary_search_label"),
-            "section" => "hereditary",
-            "settings" => "hereditary_search",
-            "type"     => "checkbox",
-                )
-    ));
+	$wp_customize->add_setting("hereditary_pagemeta", array(
+		"default" => "",
+		"transport" => "postMessage",
+	));
+
 	$wp_customize->add_control(new WP_Customize_Control(
 		$wp_customize,
 		"hereditary_navpos",
@@ -185,6 +180,16 @@ function hereditary_customize_register($wp_customize)
 		),
 		)
 	));
+    $wp_customize->add_control(new WP_Customize_Control(
+        $wp_customize,
+        "hereditary_search",
+        array(  
+            "label" => __("Display a search box", "customizer_hereditary_search_label"),
+            "section" => "hereditary",
+            "settings" => "hereditary_search",
+            "type"     => "checkbox",
+                )
+    ));
     $wp_customize->add_control(new WP_Customize_Control(
         $wp_customize,
         "hereditary_hero",
@@ -203,6 +208,16 @@ function hereditary_customize_register($wp_customize)
             "section" => "hereditary",
             "settings" => "hereditary_excludepages",
             "type"     => "text",
+                )
+    ));
+    $wp_customize->add_control(new WP_Customize_Control(
+        $wp_customize,
+        "hereditary_pagemeta",
+        array(  
+            "label" => __("Display page creation date and author on pages", "customizer_hereditary_pagemeta_label"),
+            "section" => "hereditary",
+            "settings" => "hereditary_pagemeta",
+            "type"     => "checkbox",
                 )
     ));
 	$wp_customize->add_control(new WP_Customize_Control(

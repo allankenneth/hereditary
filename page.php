@@ -37,8 +37,9 @@
 	<div class="row">
 <?php
     $mainbgtxtclass = get_theme_mod("hereditary_content_text");
-    $mainbgcolor = get_theme_mod("hereditary_contentbg");
     $excludes = get_theme_mod("hereditary_excludepages");
+    $mainbgcolor = get_theme_mod("hereditary_contentbg");
+    $pagemeta = get_theme_mod("hereditary_pagemeta");
     $children = get_pages('child_of='.$post->ID);
     $parent = $post->post_parent;
     $siblings =  get_pages('child_of='.$parent);
@@ -87,12 +88,14 @@
 
 		<div class="<?php echo $mainbgtxtclass ?> maincontentbg">
 		<?php the_content() ?>
+		<?php if($pagemeta): ?>
 		<div class="postedon">
 			<p>Created: <?php the_time('l, F jS, Y') ?> by: <?php the_author_posts_link(); ?></p>
-<div id="users">
-   <?php wp_dropdown_users(array('name' => 'author', 'echo' => 0)); ?>
-</div>
+			<div id="users">
+			<?php wp_dropdown_users(array('name' => 'author', 'echo' => 0)); ?>
+			</div>
 		</div>
+		<?php endif; ?>
 		</div>
 		<div><?php edit_post_link( __( 'Edit' )); ?></div>
 		<?php if(comments_open()): ?>
