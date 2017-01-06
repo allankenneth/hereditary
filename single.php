@@ -12,13 +12,6 @@
 
 <div class="container">
 	<div class="row">
-	<div class="col-md-12">
-		<ol class="breadcrumb">
-		<li class="breadcrumb-item"><a href="/">Home</a></li>
-		<li class="breadcrumb-item"><a href="/blog">Blog</a></li>
-		<li class="breadcrumb-item active"><?php the_title() ?></li>
-		</ol>
-	</div>
 
 		<div class="col-md-9">
 			<date class="pagetitle"><?php the_date() ?></date>
